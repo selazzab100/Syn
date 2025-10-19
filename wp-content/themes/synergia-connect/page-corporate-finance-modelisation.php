@@ -6,17 +6,18 @@
  */
 
 get_header();
+$is_fr = synergia_connect_is_french();
 ?>
 <section class="page-title">
-  <h1>Corporate Finance &amp; Modélisation<br><span lang="en">Corporate Finance &amp; Modeling</span></h1>
-  <p>Modèles robustes, décisions éclairées</p>
+  <h1><?php echo synergia_connect_translate( 'Corporate Finance &amp; Modélisation', 'Corporate Finance &amp; Modeling' ); ?></h1>
+  <p><?php echo synergia_connect_translate( 'Modèles robustes, décisions éclairées', 'Robust models, confident decisions' ); ?></p>
 </section>
-<section class="content-section">
-  <div class="container dual-language">
-    <div>
+<section class="content-section single-column">
+  <div class="container">
+    <?php if ( $is_fr ) : ?>
       <h2>Structurer votre performance financière</h2>
       <p>Nous associons expertise en modélisation et conseil financier pour sécuriser vos décisions d’investissement et maximiser la valeur créée.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Modélisation financière / Business Plan</h3>
           <ul>
@@ -42,16 +43,17 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contactez-nous</a>
-    </div>
-    <div lang="en">
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contactez-nous</a>
+      </div>
+    <?php else : ?>
       <h2>Strengthening financial decision-making</h2>
-      <p>We blend modeling expertise with financial advisory to secure investment decisions and maximize value creation.</p>
-      <ul class="service-list">
+      <p>We blend modeling expertise with financial advisory to secure investment decisions and maximise value creation.</p>
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Financial Modeling / Business Planning</h3>
           <ul>
-            <li>FAST/ICo compliant 3-statement financial models with scenarios.</li>
+            <li>FAST/ICo compliant three-statement financial models with scenarios.</li>
             <li>Investment and growth business plans.</li>
             <li>Independent reviews from an investor perspective.</li>
           </ul>
@@ -60,7 +62,7 @@ get_header();
           <h3>Financial Advisory</h3>
           <ul>
             <li>Financial structure assessment and alternatives.</li>
-            <li>Value creation analysis (margin, CAPEX, working capital).</li>
+            <li>Value creation analysis across margin, CAPEX, and working capital.</li>
             <li>Preliminary valuation through multiples screening.</li>
           </ul>
         </li>
@@ -73,8 +75,10 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contact us</a>
-    </div>
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contact us</a>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

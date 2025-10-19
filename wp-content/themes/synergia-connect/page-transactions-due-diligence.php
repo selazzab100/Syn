@@ -6,17 +6,18 @@
  */
 
 get_header();
+$is_fr = synergia_connect_is_french();
 ?>
 <section class="page-title">
-  <h1>Transactions &amp; Due Diligence<br><span lang="en">Transactions &amp; Due Diligence</span></h1>
-  <p>Optimiser chaque phase de vos deals</p>
+  <h1><?php echo synergia_connect_translate( 'Transactions &amp; Due Diligence', 'Transactions &amp; Due Diligence' ); ?></h1>
+  <p><?php echo synergia_connect_translate( 'Optimiser chaque phase de vos deals', 'Optimising every phase of your deals' ); ?></p>
 </section>
-<section class="content-section">
-  <div class="container dual-language">
-    <div>
+<section class="content-section single-column">
+  <div class="container">
+    <?php if ( $is_fr ) : ?>
       <h2>Sécuriser vos opérations stratégiques</h2>
       <p>Nous accompagnons les entreprises sur l’ensemble du cycle transactionnel avec une approche rigoureuse et orientée valeur.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Due diligence financière</h3>
           <ul>
@@ -42,12 +43,13 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contactez-nous</a>
-    </div>
-    <div lang="en">
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contactez-nous</a>
+      </div>
+    <?php else : ?>
       <h2>Securing your strategic deals</h2>
       <p>We support companies throughout the full transaction lifecycle with rigorous, value-oriented advisory.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Financial Due Diligence</h3>
           <ul>
@@ -73,8 +75,10 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contact us</a>
-    </div>
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contact us</a>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

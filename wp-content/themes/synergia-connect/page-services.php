@@ -8,92 +8,113 @@
 get_header();
 ?>
 <section class="page-title">
-  <h1>Services Synergia<br><span lang="en">Synergia Services</span></h1>
-  <p>Votre partenaire stratégique et financier / Your strategic and financial partner</p>
+  <h1><?php echo synergia_connect_translate( 'Services Synergia', 'Synergia Services' ); ?></h1>
+  <p><?php echo synergia_connect_translate( 'Votre partenaire stratégique et financier', 'Your strategic and financial partner' ); ?></p>
 </section>
-<section class="content-section">
-  <div class="container dual-language">
-    <div>
-      <h2>Notre proposition de valeur</h2>
-      <p>Synergia offre une gamme complète de services couvrant la stratégie, la finance, les opérations et la formation. Nous accompagnons les entreprises à chaque étape de leur développement avec des solutions intégrées, orientées résultats.</p>
-      <ul class="service-list">
-        <li class="service-item">
-          <h3>Stratégie &amp; Excellence Opérationnelle</h3>
-          <p>Définition de la stratégie et optimisation continue des processus pour une performance globale optimale.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/strategie-excellence-operationnelle/' ) ); ?>">En savoir plus</a>
-        </li>
-        <li class="service-item">
-          <h3>Transactions &amp; Due Diligence</h3>
-          <p>Assistance lors des opérations de M&amp;A et levées de fonds, incluant due diligence et support à la négociation.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/transactions-due-diligence/' ) ); ?>">En savoir plus</a>
-        </li>
-        <li class="service-item">
-          <h3>Corporate Finance &amp; Modélisation</h3>
-          <p>Modélisation financière, structure de capital et valorisation pour maximiser la valeur d’entreprise.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/corporate-finance-modelisation/' ) ); ?>">En savoir plus</a>
-        </li>
-        <li class="service-item">
-          <h3>CFO Advisory &amp; Transformation Finance</h3>
-          <p>Transformation de la fonction finance, pilotage de la performance et contrôle de gestion avancé.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/cfo-advisory-transformation-finance/' ) ); ?>">En savoir plus</a>
-        </li>
-        <li class="service-item">
-          <h3>Financement &amp; Levée de Fonds</h3>
-          <p>Conseil en levées de fonds equity et dette, préparation des dossiers investisseurs et négociation.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/financement-levee-de-fonds/' ) ); ?>">En savoir plus</a>
-        </li>
-        <li class="service-item">
-          <h3>Subventions &amp; Financements publics</h3>
-          <p>Identification des subventions, montage des dossiers et suivi des financements publics.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/subventions-financements-publics/' ) ); ?>">En savoir plus</a>
-        </li>
-        <li class="service-item">
-          <h3>Académie &amp; Formation</h3>
-          <p>Formations et ateliers sur mesure pour renforcer les compétences stratégiques et financières.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/academie-formation/' ) ); ?>">En savoir plus</a>
-        </li>
-      </ul>
+<section class="service-showcase">
+  <div class="container">
+    <div class="services-intro">
+      <h2><?php echo synergia_connect_translate( 'Des expertises intégrées pour accélérer vos projets', 'Integrated expertise to accelerate your initiatives' ); ?></h2>
+      <p><?php echo synergia_connect_translate(
+        'Synergia couvre l’ensemble de la chaîne de valeur – de la stratégie à l’exécution – pour transformer vos ambitions en résultats mesurables. Naviguez dans nos lignes de services et accédez à une présentation détaillée de chaque offre.',
+        'Synergia covers the entire value chain—from strategy to execution—to turn your ambition into measurable outcomes. Explore our service lines for detailed overviews of each offer.'
+      ); ?></p>
     </div>
-    <div>
-      <h2 lang="en">Our value proposition</h2>
-      <p lang="en">Synergia delivers a comprehensive portfolio of services spanning strategy, finance, operations, and training. We support businesses at every stage of their journey with integrated, results-driven solutions.</p>
-      <ul class="service-list" lang="en">
-        <li class="service-item">
-          <h3>Strategy &amp; Operational Excellence</h3>
-          <p>Defining corporate strategy and continuously improving processes to optimize performance.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/strategie-excellence-operationnelle/' ) ); ?>">Learn more</a>
-        </li>
-        <li class="service-item">
-          <h3>Transactions &amp; Due Diligence</h3>
-          <p>Supporting M&amp;A and fundraising projects, including due diligence and negotiation advisory.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/transactions-due-diligence/' ) ); ?>">Learn more</a>
-        </li>
-        <li class="service-item">
-          <h3>Corporate Finance &amp; Modeling</h3>
-          <p>Financial modeling, capital structure guidance, and valuation to maximize company value.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/corporate-finance-modelisation/' ) ); ?>">Learn more</a>
-        </li>
-        <li class="service-item">
-          <h3>CFO Advisory &amp; Finance Transformation</h3>
-          <p>Transforming the finance function, enhancing performance management, and strengthening controls.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/cfo-advisory-transformation-finance/' ) ); ?>">Learn more</a>
-        </li>
-        <li class="service-item">
-          <h3>Fundraising &amp; Financing</h3>
-          <p>Advising on equity and debt fundraising, investor materials, and term negotiations.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/financement-levee-de-fonds/' ) ); ?>">Learn more</a>
-        </li>
-        <li class="service-item">
-          <h3>Grants &amp; Incentives</h3>
-          <p>Identifying grants, preparing applications, and managing public funding programs.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/subventions-financements-publics/' ) ); ?>">Learn more</a>
-        </li>
-        <li class="service-item">
-          <h3>Academy &amp; Training</h3>
-          <p>Tailor-made programs and workshops to develop strategic and financial capabilities.</p>
-          <a class="btn-text" href="<?php echo esc_url( home_url( '/index.php/academie-formation/' ) ); ?>">Learn more</a>
-        </li>
-      </ul>
+    <div class="service-mosaic">
+      <?php
+      $services = [
+        [
+          'icon'      => '📈',
+          'slug'      => 'strategie-excellence-operationnelle',
+          'title_fr'  => 'Stratégie & Excellence Opérationnelle',
+          'title_en'  => 'Strategy & Operational Excellence',
+          'intro_fr'  => 'Clarifier la vision, structurer les plans de création de valeur et fluidifier les opérations.',
+          'intro_en'  => 'Clarify the vision, build value creation plans, and streamline operations.',
+          'highlights_fr' => [ 'Diagnostic stratégique 360°', 'Roadmap de transformation', 'Lean & automatisation ciblée' ],
+          'highlights_en' => [ '360° strategic diagnostic', 'Transformation roadmap', 'Targeted lean & automation' ],
+        ],
+        [
+          'icon'      => '🤝',
+          'slug'      => 'transactions-due-diligence',
+          'title_fr'  => 'Transactions & Due Diligence',
+          'title_en'  => 'Transactions & Due Diligence',
+          'intro_fr'  => 'Sécuriser vos opérations de M&A et levées de fonds grâce à une analyse rigoureuse.',
+          'intro_en'  => 'Secure M&A and fundraising journeys with rigorous analysis.',
+          'highlights_fr' => [ 'Buy-side & vendor due diligence', 'Structuration SPA & QoE', 'Plan post-deal 100 jours' ],
+          'highlights_en' => [ 'Buy-side & vendor due diligence', 'SPA structuring & QoE', 'Post-deal 100-day plan' ],
+        ],
+        [
+          'icon'      => '💹',
+          'slug'      => 'corporate-finance-modelisation',
+          'title_fr'  => 'Corporate Finance & Modélisation',
+          'title_en'  => 'Corporate Finance & Modeling',
+          'intro_fr'  => 'Modéliser vos scénarios et optimiser la structure financière pour maximiser la valeur.',
+          'intro_en'  => 'Model scenarios and optimise financial structure to maximise value.',
+          'highlights_fr' => [ 'Modèles financiers 3 états', 'Analyse de structure & multiples', 'Valorisation multi-méthodes' ],
+          'highlights_en' => [ 'Three-statement financial models', 'Structure analysis & multiples', 'Multi-method valuation' ],
+        ],
+        [
+          'icon'      => '🧭',
+          'slug'      => 'cfo-advisory-transformation-finance',
+          'title_fr'  => 'CFO Advisory & Transformation Finance',
+          'title_en'  => 'CFO Advisory & Finance Transformation',
+          'intro_fr'  => 'Renforcer la fonction finance, ses processus et ses outils de pilotage.',
+          'intro_en'  => 'Strengthen the finance function, its processes, and performance tooling.',
+          'highlights_fr' => [ 'Target operating model Finance', 'Pilotage & KPI orientés performance', 'Fast close & contrôle interne' ],
+          'highlights_en' => [ 'Finance target operating model', 'Performance-oriented KPIs', 'Fast close & internal control' ],
+        ],
+        [
+          'icon'      => '💼',
+          'slug'      => 'financement-levee-de-fonds',
+          'title_fr'  => 'Financement & Levée de Fonds',
+          'title_en'  => 'Fundraising & Financing',
+          'intro_fr'  => 'Structurer vos dossiers equity et dette pour accélérer l’accès aux capitaux.',
+          'intro_en'  => 'Structure equity and debt packages to accelerate capital access.',
+          'highlights_fr' => [ 'Equity story & teaser', 'Structuration dette & covenants', 'Readiness avant roadshow' ],
+          'highlights_en' => [ 'Equity story & teaser', 'Debt structuring & covenants', 'Pre-roadshow readiness' ],
+        ],
+        [
+          'icon'      => '🏛️',
+          'slug'      => 'subventions-financements-publics',
+          'title_fr'  => 'Subventions & Financements publics',
+          'title_en'  => 'Grants & Public Funding',
+          'intro_fr'  => 'Identifier les programmes et sécuriser les financements publics adaptés à vos projets.',
+          'intro_en'  => 'Identify programmes and secure public funding tailored to your projects.',
+          'highlights_fr' => [ 'Cartographie des aides', 'Montage technique & financier', 'Reporting et conformité' ],
+          'highlights_en' => [ 'Funding opportunity mapping', 'Technical & financial structuring', 'Reporting and compliance' ],
+        ],
+        [
+          'icon'      => '🎓',
+          'slug'      => 'academie-formation',
+          'title_fr'  => 'Académie & Formation',
+          'title_en'  => 'Academy & Training',
+          'intro_fr'  => 'Développer les compétences clés de vos équipes à travers des formats immersifs.',
+          'intro_en'  => 'Develop critical capabilities through immersive learning formats.',
+          'highlights_fr' => [ 'Programmes dirigeants & managers', 'Tracks finance & deal', 'Parcours certifiants & coaching' ],
+          'highlights_en' => [ 'Executive & management programmes', 'Finance & deal tracks', 'Certification paths & coaching' ],
+        ],
+      ];
+      foreach ( $services as $service ) {
+        $title = synergia_connect_translate( $service['title_fr'], $service['title_en'] );
+        $intro = synergia_connect_translate( $service['intro_fr'], $service['intro_en'] );
+        $list  = synergia_connect_translate( $service['highlights_fr'], $service['highlights_en'] );
+        ?>
+        <article class="service-panel">
+          <div class="panel-top">
+            <span class="panel-icon" aria-hidden="true"><?php echo esc_html( $service['icon'] ); ?></span>
+            <h3><?php echo esc_html( $title ); ?></h3>
+            <p><?php echo esc_html( $intro ); ?></p>
+          </div>
+          <ul class="panel-list">
+            <?php foreach ( (array) $list as $item ) : ?>
+              <li><?php echo esc_html( $item ); ?></li>
+            <?php endforeach; ?>
+          </ul>
+          <a class="btn-outline" href="<?php echo esc_url( synergia_connect_link( $service['slug'] ) ); ?>"><?php echo synergia_connect_translate( 'Découvrir la ligne', 'View service line' ); ?></a>
+        </article>
+        <?php
+      }
+      ?>
     </div>
   </div>
 </section>

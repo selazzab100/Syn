@@ -6,17 +6,18 @@
  */
 
 get_header();
+$is_fr = synergia_connect_is_french();
 ?>
 <section class="page-title">
-  <h1>CFO Advisory &amp; Transformation Finance<br><span lang="en">CFO Advisory &amp; Finance Transformation</span></h1>
-  <p>Faire de la fonction finance un levier stratégique</p>
+  <h1><?php echo synergia_connect_translate( 'CFO Advisory &amp; Transformation Finance', 'CFO Advisory &amp; Finance Transformation' ); ?></h1>
+  <p><?php echo synergia_connect_translate( 'Faire de la fonction finance un levier stratégique', 'Turning the finance function into a strategic lever' ); ?></p>
 </section>
-<section class="content-section">
-  <div class="container dual-language">
-    <div>
+<section class="content-section single-column">
+  <div class="container">
+    <?php if ( $is_fr ) : ?>
       <h2>Renforcer votre gouvernance financière</h2>
       <p>Synergia soutient la refonte de la fonction finance pour améliorer pilotage, contrôle et création de valeur.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Refonte de la fonction Finance</h3>
           <ul>
@@ -42,16 +43,17 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contactez-nous</a>
-    </div>
-    <div lang="en">
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contactez-nous</a>
+      </div>
+    <?php else : ?>
       <h2>Elevating finance leadership</h2>
       <p>Synergia partners with CFOs to redesign finance operations, strengthen governance, and deliver measurable performance.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Finance function redesign</h3>
           <ul>
-            <li>Finance Target Operating Model and target organization.</li>
+            <li>Finance Target Operating Model and target organisation.</li>
             <li>Roles, responsibilities, RACI, and delegation schemes.</li>
             <li>Blueprint of core processes (R2R, P2P, O2C, T&amp;E, Capex).</li>
           </ul>
@@ -67,14 +69,16 @@ get_header();
         <li class="service-item">
           <h3>Closing &amp; assurance</h3>
           <ul>
-            <li>Fast-close programs improving compliance rates.</li>
+            <li>Fast-close programmes improving compliance rates.</li>
             <li>Finance policy and procedure frameworks.</li>
             <li>Core internal control reinforcement (non-SOX).</li>
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contact us</a>
-    </div>
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contact us</a>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

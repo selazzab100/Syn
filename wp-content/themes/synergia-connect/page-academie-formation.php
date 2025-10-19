@@ -6,17 +6,18 @@
  */
 
 get_header();
+$is_fr = synergia_connect_is_french();
 ?>
 <section class="page-title">
-  <h1>Académie &amp; Formation<br><span lang="en">Academy &amp; Training</span></h1>
-  <p>Développer les compétences de demain</p>
+  <h1><?php echo synergia_connect_translate( 'Académie &amp; Formation', 'Academy &amp; Training' ); ?></h1>
+  <p><?php echo synergia_connect_translate( 'Développer les compétences de demain', 'Developing tomorrow’s capabilities' ); ?></p>
 </section>
-<section class="content-section">
-  <div class="container dual-language">
-    <div>
+<section class="content-section single-column">
+  <div class="container">
+    <?php if ( $is_fr ) : ?>
       <h2>Capitaliser sur vos talents</h2>
       <p>Synergia conçoit des programmes immersifs pour renforcer les compétences stratégiques et financières de vos dirigeants et managers.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Programmes dirigeants &amp; managers</h3>
           <ul>
@@ -40,37 +41,40 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contactez-nous</a>
-    </div>
-    <div lang="en">
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contactez-nous</a>
+      </div>
+    <?php else : ?>
       <h2>Developing future-ready teams</h2>
-      <p>Synergia delivers immersive learning programs that build strategic, financial, and operational skills for executives and managers.</p>
-      <ul class="service-list">
+      <p>Synergia delivers immersive learning programmes that build strategic, financial, and operational skills for executives and managers.</p>
+      <ul class="service-list detailed">
         <li class="service-item">
-          <h3>Executive &amp; management programs</h3>
+          <h3>Executive &amp; management programmes</h3>
           <ul>
             <li>Strategy, performance steering, and financial statement literacy.</li>
             <li>Finance for non-financial managers (cash, margins, ROI).</li>
           </ul>
         </li>
         <li class="service-item">
-          <h3>Specialized finance/deal tracks</h3>
+          <h3>Specialised finance/deal tracks</h3>
           <ul>
             <li>Due diligence simulations (VDD/BDD).</li>
-            <li>Advanced financial modeling (scenarios, sensitivity).</li>
+            <li>Advanced financial modelling (scenarios, sensitivity).</li>
             <li>Accelerated close and essential internal controls.</li>
           </ul>
         </li>
         <li class="service-item">
           <h3>Formats &amp; delivery</h3>
           <ul>
-            <li>In-company and open workshops, certification paths, 1-to-1 coaching.</li>
-            <li>Contextualized business games and case studies for Morocco/Africa.</li>
+            <li>In-company and open workshops, certification paths, one-to-one coaching.</li>
+            <li>Contextualised business games and case studies for Morocco/Africa.</li>
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contact us</a>
-    </div>
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contact us</a>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

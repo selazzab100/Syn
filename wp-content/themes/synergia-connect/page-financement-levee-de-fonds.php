@@ -6,17 +6,18 @@
  */
 
 get_header();
+$is_fr = synergia_connect_is_french();
 ?>
 <section class="page-title">
-  <h1>Financement &amp; Levée de Fonds<br><span lang="en">Fundraising &amp; Financing</span></h1>
-  <p>Accélérer votre croissance financière</p>
+  <h1><?php echo synergia_connect_translate( 'Financement &amp; Levée de Fonds', 'Fundraising &amp; Financing' ); ?></h1>
+  <p><?php echo synergia_connect_translate( 'Accélérer votre croissance financière', 'Accelerate your financial growth' ); ?></p>
 </section>
-<section class="content-section">
-  <div class="container dual-language">
-    <div>
+<section class="content-section single-column">
+  <div class="container">
+    <?php if ( $is_fr ) : ?>
       <h2>Structurer et réussir vos levées</h2>
       <p>Nous sécurisons vos opérations de financement en equity et dette grâce à une préparation rigoureuse et une négociation efficace.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Equity &amp; quasi-equity</h3>
           <ul>
@@ -42,12 +43,13 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contactez-nous</a>
-    </div>
-    <div lang="en">
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contactez-nous</a>
+      </div>
+    <?php else : ?>
       <h2>Designing winning fundraising journeys</h2>
       <p>We help you secure equity and debt financing through meticulous preparation, investor-ready materials, and negotiation support.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Equity &amp; quasi-equity</h3>
           <ul>
@@ -73,8 +75,10 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contact us</a>
-    </div>
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contact us</a>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

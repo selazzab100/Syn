@@ -6,17 +6,18 @@
  */
 
 get_header();
+$is_fr = synergia_connect_is_french();
 ?>
 <section class="page-title">
-  <h1>Subventions &amp; Financements publics<br><span lang="en">Grants &amp; Incentives</span></h1>
-  <p>Maximiser vos aides et financements publics</p>
+  <h1><?php echo synergia_connect_translate( 'Subventions &amp; Financements publics', 'Grants &amp; Incentives' ); ?></h1>
+  <p><?php echo synergia_connect_translate( 'Maximiser vos aides et financements publics', 'Maximise your public funding' ); ?></p>
 </section>
-<section class="content-section">
-  <div class="container dual-language">
-    <div>
+<section class="content-section single-column">
+  <div class="container">
+    <?php if ( $is_fr ) : ?>
       <h2>Sécuriser vos financements publics</h2>
       <p>Nous identifions les programmes éligibles, construisons les dossiers et assurons le suivi jusqu’au décaissement des subventions.</p>
-      <ul class="service-list">
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Cartographie &amp; éligibilité</h3>
           <ul>
@@ -41,17 +42,18 @@ get_header();
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contactez-nous</a>
-    </div>
-    <div lang="en">
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contactez-nous</a>
+      </div>
+    <?php else : ?>
       <h2>Unlocking public funding opportunities</h2>
-      <p>We map relevant programs, build robust applications, and manage compliance until grants are secured and disbursed.</p>
-      <ul class="service-list">
+      <p>We map relevant programmes, build robust applications, and manage compliance until grants are secured and disbursed.</p>
+      <ul class="service-list detailed">
         <li class="service-item">
           <h3>Mapping &amp; eligibility</h3>
           <ul>
-            <li>Screening national, regional, and sector programs.</li>
-            <li>Eligibility diagnostics and prioritization of funding schemes.</li>
+            <li>Screening national, regional, and sector programmes.</li>
+            <li>Eligibility diagnostics and prioritisation of funding schemes.</li>
           </ul>
         </li>
         <li class="service-item">
@@ -66,13 +68,15 @@ get_header();
           <h3>Compliance &amp; post-award reporting</h3>
           <ul>
             <li>Milestone tracking and progress reporting.</li>
-            <li>Preparation for fund utilization audits.</li>
-            <li>Optimization of grants versus alternative financing.</li>
+            <li>Preparation for fund utilisation audits.</li>
+            <li>Optimisation of grants versus alternative financing.</li>
           </ul>
         </li>
       </ul>
-      <a class="btn-primary" href="<?php echo esc_url( home_url( '/index.php/contact/' ) ); ?>">Contact us</a>
-    </div>
+      <div class="cta-wrap">
+        <a class="btn-primary" href="<?php echo esc_url( synergia_connect_link( 'contact' ) ); ?>">Contact us</a>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

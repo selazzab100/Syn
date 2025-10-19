@@ -16,8 +16,8 @@
 <header class="site-header" role="banner">
   <div class="container header-inner">
     <div class="branding" aria-label="Synergia">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <?php bloginfo( 'name' ); ?>
+      <a href="<?php echo esc_url( synergia_connect_link() ); ?>">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo1.png' ); ?>" alt="Synergia" />
       </a>
     </div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="contextualMenu">
@@ -39,17 +39,10 @@
       'fallback_cb'    => function () {
         echo '<ul>';
         $links = [
-          __( 'Home', 'synergia-connect' ) => home_url( '/' ),
-          __( 'Services', 'synergia-connect' ) => home_url( '/index.php/services/' ),
-          __( 'About', 'synergia-connect' ) => home_url( '/index.php/a-propos/' ),
-          __( 'Contact', 'synergia-connect' ) => home_url( '/index.php/contact/' ),
-          __( 'Strategy & Operational Excellence', 'synergia-connect' ) => home_url( '/index.php/strategie-excellence-operationnelle/' ),
-          __( 'Transactions & Due Diligence', 'synergia-connect' ) => home_url( '/index.php/transactions-due-diligence/' ),
-          __( 'Corporate Finance & Modeling', 'synergia-connect' ) => home_url( '/index.php/corporate-finance-modelisation/' ),
-          __( 'CFO Advisory & Finance Transformation', 'synergia-connect' ) => home_url( '/index.php/cfo-advisory-transformation-finance/' ),
-          __( 'Fundraising & Financing', 'synergia-connect' ) => home_url( '/index.php/financement-levee-de-fonds/' ),
-          __( 'Grants & Public Funding', 'synergia-connect' ) => home_url( '/index.php/subventions-financements-publics/' ),
-          __( 'Academy & Training', 'synergia-connect' ) => home_url( '/index.php/academie-formation/' ),
+          synergia_connect_translate( 'Accueil', 'Home' ) => synergia_connect_link(),
+          synergia_connect_translate( 'Services', 'Services' ) => synergia_connect_link( 'services' ),
+          synergia_connect_translate( 'À propos', 'About' ) => synergia_connect_link( 'a-propos' ),
+          synergia_connect_translate( 'Contact', 'Contact' ) => synergia_connect_link( 'contact' ),
         ];
         foreach ( $links as $label => $url ) {
           printf( '<li><a href="%1$s">%2$s</a></li>', esc_url( $url ), esc_html( $label ) );
@@ -60,8 +53,9 @@
     ?>
   </nav>
   <div class="language-switcher" aria-label="Language switcher">
-    <a href="<?php echo esc_url( home_url( '/index.php/' ) ); ?>" class="active">FR</a>
-    <a href="<?php echo esc_url( home_url( '/index.php/en/' ) ); ?>">EN</a>
+    <?php $current_lang = synergia_connect_get_lang(); ?>
+    <a href="<?php echo esc_url( synergia_connect_language_url( 'fr' ) ); ?>" class="<?php echo 'fr' === $current_lang ? 'active' : ''; ?>">FR</a>
+    <a href="<?php echo esc_url( synergia_connect_language_url( 'en' ) ); ?>" class="<?php echo 'en' === $current_lang ? 'active' : ''; ?>">EN</a>
   </div>
 </div>
 <main class="site-main" role="main">
