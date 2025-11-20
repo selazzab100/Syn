@@ -151,7 +151,7 @@ Private Function GetOrganigramSheet() As Worksheet
         ws.Name = "Organigram"
     End If
     ws.Cells.Clear
-    GetOrganigramSheet = ws
+    Set GetOrganigramSheet = ws
 End Function
 
 Private Sub ClearOrganigramShapes(ws As Worksheet)
